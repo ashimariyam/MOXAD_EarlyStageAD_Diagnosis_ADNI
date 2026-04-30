@@ -1,0 +1,31 @@
+{
+  "phase4_visualizations": {
+    "gradcam_phase2": "7 subjects \u00d7 3 orientations",
+    "attention_maps_phase3": "4 subjects",
+    "cnn_vit_comparison": "3 subjects",
+    "ensemble_heatmaps": "3 subjects",
+    "class_patterns": "5 classes"
+  },
+  "key_findings": {
+    "multi_orientation_benefit": "Different orientations capture complementary features",
+    "cnn_vs_vit": "CNN focuses on local textures, ViT on global context",
+    "ensemble_robustness": "Majority voting corrects single-view errors",
+    "clinical_relevance": "Attention maps align with known AD biomarkers"
+  },
+  "output_directories": {
+    "gradcam_phase2": "/kaggle/working/phase4_visualizations/gradcam_phase2",
+    "attention_maps": "/kaggle/working/phase4_visualizations/attention_maps",
+    "cnn_vit_comparison": "/kaggle/working/phase4_visualizations/cnn_vit_comparison",
+    "ensemble_heatmaps": "/kaggle/working/phase4_visualizations/ensemble_heatmaps",
+    "class_patterns": "/kaggle/working/phase4_visualizations/class_patterns"
+  },
+  "subjects_visualized": [
+    "094_S_2216_scan04",
+    "003_S_4839_scan02",
+    "013_S_4395_scan15",
+    "073_S_2264_scan00",
+    "002_S_1018_scan17",
+    "021_S_0231_scan01",
+    "035_S_4114_scan02"
+  ]
+}

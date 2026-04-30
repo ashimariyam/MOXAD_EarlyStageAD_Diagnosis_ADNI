@@ -1,0 +1,47 @@
+{
+  "phase3_vit_base_results": {
+    "test_accuracy": 0.9468283582089553,
+    "val_accuracy": 94.59029435163087,
+    "best_epoch": 19,
+    "total_epochs_trained": 40
+  },
+  "model_architecture": {
+    "cnn_branch": "Multi-view ResNet50 (frozen)",
+    "cnn_feature_dim": 6144,
+    "vit_model": "vit_base_patch16_224",
+    "vit_resolution": "224\u00d7224",
+    "vit_parameters": "86M",
+    "vit_feature_dim": 2304,
+    "vit_trainable": "ALL layers",
+    "cross_attention": "Multi-head (12 heads)",
+    "fusion_layers": "8448 \u2192 2048 \u2192 1024 \u2192 512",
+    "num_classes": 5,
+    "total_parameters": 128566791,
+    "trainable_parameters": 128566791
+  },
+  "training_innovations": [
+    "ViT-Base-224 (86M params, standard resolution)",
+    "Cross-attention between orientations (12 heads)",
+    "All ViT layers trainable (2e-6 LR)",
+    "MixUp augmentation (alpha=0.2)",
+    "Adaptive feature gating",
+    "Label smoothing (0.1)",
+    "Differential learning rates"
+  ],
+  "comparison": {
+    "phase1_baseline": 0.9256623171213919,
+    "phase2_ensemble": 0.9449626865671642,
+    "phase3_vit_base_cross_attention": 0.9468283582089553,
+    "improvement_vs_phase2": 0.001865671641791078,
+    "improvement_vs_baseline": 0.02116604108756337
+  },
+  "training_config": {
+    "batch_size": 8,
+    "image_size": 224,
+    "fusion_learning_rate": 5e-05,
+    "vit_learning_rate": 2e-06,
+    "weight_decay": 0.0001,
+    "max_epochs": 40,
+    "mixup_alpha": 0.2
+  }
+}

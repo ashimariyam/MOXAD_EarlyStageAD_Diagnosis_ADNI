@@ -1,0 +1,78 @@
+{
+  "multi_orientation_results": {
+    "individual_accuracies": {
+      "axial": {
+        "test_accuracy": 0.9256623171213919,
+        "val_accuracy": 92.62262658227849
+      },
+      "coronal": {
+        "test_accuracy": 0.9383155397390273,
+        "val_accuracy": 93.39398734177215
+      },
+      "sagittal": {
+        "test_accuracy": 0.9406880189798339,
+        "val_accuracy": 94.28401898734177
+      }
+    },
+    "ensemble_accuracy": 0.9449626865671642,
+    "average_individual_accuracy": 0.9348886252800844,
+    "ensemble_improvement": 0.010074061287079772
+  },
+  "for_hybrid_cnn_vit": {
+    "multi_view_fusion": {
+      "feature_extractors": {
+        "axial": "/kaggle/working/phase2_multi_orientation/axial_feature_extractor.pth",
+        "coronal": "/kaggle/working/phase2_multi_orientation/coronal_feature_extractor.pth",
+        "sagittal": "/kaggle/working/phase2_multi_orientation/sagittal_feature_extractor.pth"
+      },
+      "feature_dim_per_view": 2048,
+      "total_cnn_features": 6144,
+      "fusion_strategies": [
+        "Concatenate 3x2048 \u2192 6144 features",
+        "Attention-weighted fusion",
+        "Learned fusion layer",
+        "ViT can attend to features from all 3 views"
+      ]
+    },
+    "recommended_architecture": {
+      "cnn_branch": "3 ResNet50 feature extractors (frozen)",
+      "vit_branch": "ViT-Base (patch_size=16, embed_dim=768)",
+      "fusion": "Multi-head attention or concatenation",
+      "classifier": "Fused features \u2192 5 classes"
+    }
+  },
+  "for_visualization": {
+    "models": {
+      "axial": "/kaggle/working/phase2_multi_orientation/axial_best_model.pth",
+      "coronal": "/kaggle/working/phase2_multi_orientation/coronal_best_model.pth",
+      "sagittal": "/kaggle/working/phase2_multi_orientation/sagittal_best_model.pth"
+    },
+    "target_layers": [
+      "backbone.layer4",
+      "backbone.layer3"
+    ],
+    "techniques": [
+      "GradCAM per orientation",
+      "Ensemble attention maps",
+      "Multi-view saliency"
+    ]
+  },
+  "data_info": {
+    "train_csv": "/kaggle/input/phase1-outputs/train_balanced.csv",
+    "val_csv": "/kaggle/input/phase1-outputs/val_balanced.csv",
+    "test_csv": "/kaggle/input/phase1-outputs/test_balanced.csv",
+    "orientations": [
+      "axial",
+      "coronal",
+      "sagittal"
+    ],
+    "classes": [
+      "AD",
+      "CN",
+      "EMCI",
+      "LMCI",
+      "MCI"
+    ]
+  },
+  "outputs_directory": "/kaggle/working/phase2_multi_orientation"
+}

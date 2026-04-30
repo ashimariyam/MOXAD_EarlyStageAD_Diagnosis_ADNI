@@ -1,0 +1,38 @@
+{
+  "baseline_performance": {
+    "test_accuracy": 0.9256623171213919,
+    "val_accuracy": 92.62262658227849,
+    "per_class_results": {}
+  },
+  "model_architecture": {
+    "backbone": "ResNet50",
+    "pretrained": "ImageNet",
+    "trainable_params": 19369989,
+    "frozen_layers": "First 60 layers",
+    "classifier": "2048 -> 512 -> 5"
+  },
+  "for_hybrid_cnn_vit": {
+    "cnn_feature_dim": 2048,
+    "feature_extractor_path": "/kaggle/working/phase1_outputs/resnet50_feature_extractor.pth",
+    "recommended_vit_config": {
+      "patch_size": 16,
+      "embed_dim": 768,
+      "fusion_strategy": "concatenate or attention-based",
+      "note": "CNN features can be projected to match ViT dimensions"
+    }
+  },
+  "for_visualization": {
+    "model_path": "/kaggle/working/phase1_outputs/baseline_resnet50.pth",
+    "sample_images": "/kaggle/working/phase1_outputs/visualization_samples.csv",
+    "target_layers": [
+      "backbone.layer4",
+      "backbone.layer3"
+    ],
+    "techniques": [
+      "GradCAM",
+      "GradCAM++",
+      "Attention Maps"
+    ]
+  },
+  "outputs_directory": "/kaggle/working/phase1_outputs"
+}

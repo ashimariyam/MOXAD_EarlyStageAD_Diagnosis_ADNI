@@ -1,0 +1,27 @@
+{
+  "train_csv": "/kaggle/working/phase1_outputs/train_balanced.csv",
+  "val_csv": "/kaggle/working/phase1_outputs/val_balanced.csv",
+  "test_csv": "/kaggle/working/phase1_outputs/test_balanced.csv",
+  "data_path": "/kaggle/input/adni-preprocessed-5class/ADNI_PHASE1_PROCESSED_20251116_081625",
+  "train_size": 53085,
+  "val_size": 15168,
+  "test_size": 7587,
+  "orientations": [
+    "axial",
+    "coronal",
+    "sagittal"
+  ],
+  "current_orientation": "axial",
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  }
+}
