@@ -135,4 +135,4 @@ Typical dependencies used in the notebooks include:
 
 ## License
 
-This repository does not currently include a license file. Add one if you plan to share or distribute the project publicly.
+This project is licensed under the Apache License 2.0. See the LICENSE file for the full license text.
